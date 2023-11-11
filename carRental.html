@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>  
+        <title>Car Rental</title> 
+        <script>
+            function getCost(){
+         
+            var selectedCar = selectBox.options[selectBox.selectedIndex].value;
+            var daysInTotal = document.getElementById("daysIn").value;
+            var pricePerDay = 0;
+                      
+            switch(selectedCar) {
+                case " ":
+                    pricePerDay = " ";
+                    break;
+                case "car":
+                    pricePerDay = 24.95;
+                    break;
+                case "SUV":
+                    pricePerDay = 34.95;
+                    break;
+                case "van":
+                    pricePerDay = 54.95;
+            }        
+
+            var totalCost = daysInTotal * pricePerDay;
+            //output
+            
+            document.getElementById("ratePerDay").innerHTML = "Your daily cost is: $" + pricePerDay.toFixed(2);
+
+            document.getElementById("totalCostOut").innerHTML = "Your total cost is: $" + totalCost.toFixed(2);
+            }
+        </script>
+    </head>
+	<body>
+        <h1>josephParrett</h1>
+
+        <p>How many days: <input id="daysIn" type="number" size="5" min="0" max="100" value="0"></p>
+
+          <select id="selectBox" onchange="getCost()">
+            <option value=""></option>
+            <option value="car">Car</option>
+            <option value="SUV">SUV</option>
+            <option value="van">Van</option>
+          </select></body><br><br>
+                 
+        <P id="ratePerDay"></P>
+        <p id="totalCostOut"></p>
+        
+	</body>	
+</html>

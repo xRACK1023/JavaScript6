@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>  
+        <title>Player Rating</title> 
+        <script>
+            function getScore() {
+
+            var score = document.getElementById("playerScore").value;
+            var ratingLevel = "";
+            
+            if (score <= 999999) {
+                ratingLevel = "Rookie";
+            } else if (score <= 1999999) {
+                ratingLevel = "Fighter Ace";
+            } else {
+                ratingLevel = "Maverick";
+            }
+
+            document.getElementById("showRating").innerHTML = "Your player rating is: " + ratingLevel + ".";
+            }
+        </script>
+    </head>
+	<body>
+        <h1>josephParrett</h1>
+        
+        <p>Alien Invader Score: <input id="playerScore" size="8"></p>
+        <button type="button" onclick="getScore()">Submit</button>
+
+        <p id="showRating"></p>
+	</body>
+</html>

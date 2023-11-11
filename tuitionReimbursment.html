@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>  
+        <title>Tuition</title> 
+        <script>
+
+            function getCost(){
+
+            //input
+            var grade = document.getElementById("gradeIn").value;
+            var totalCredit = document.getElementById("inTotalCredits").value;
+            var moneyBack = 0;
+            var rate = 0;
+            //process
+
+            if (grade == "A") {
+                rate = 200;
+            } else if (grade == "B") {
+                rate = 100;
+            } else
+                rate = 0;
+
+            moneyBack = rate * totalCredit;
+
+            //output
+            document.getElementById("rateOut").innerHTML = "Your rate is: $" + rate.toFixed(2);
+            document.getElementById("totalReimb").innerHTML = "Your total reimbursment is: $" + moneyBack.toFixed(2);
+            }
+        </script>
+    </head>
+	<body>
+        <h1>josephParrett</h1>
+
+        <p>Your Grade: <input id="gradeIn" type="text" size="2" value="0"></p>
+        <p>Number of credits taken: <input id="inTotalCredits" type="number" size="3" min="0" max="12" value="0"></p>
+        
+        <button type="button" onclick="getCost()">Calculate</button>
+        <p id="rateOut"></p>
+        <p id="totalReimb"></p>
+	</body>	
+</html>
