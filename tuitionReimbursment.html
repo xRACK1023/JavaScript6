@@ -7,13 +7,11 @@
 
             function getCost(){
 
-            //input
             var grade = document.getElementById("gradeIn").value;
             var totalCredit = document.getElementById("inTotalCredits").value;
-            var moneyBack = 0;
-            var rate = 0;
-            //process
 
+
+            var rate = 0;
             if (grade == "A") {
                 rate = 200;
             } else if (grade == "B") {
@@ -21,9 +19,8 @@
             } else
                 rate = 0;
 
-            moneyBack = rate * totalCredit;
+            var moneyBack = rate * totalCredit;
 
-            //output
             document.getElementById("rateOut").innerHTML = "Your rate is: $" + rate.toFixed(2);
             document.getElementById("totalReimb").innerHTML = "Your total reimbursment is: $" + moneyBack.toFixed(2);
             }

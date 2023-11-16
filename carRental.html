@@ -8,8 +8,8 @@
          
             var selectedCar = selectBox.options[selectBox.selectedIndex].value;
             var daysInTotal = document.getElementById("daysIn").value;
-            var pricePerDay = 0;
-                      
+            
+            var pricePerDay = 0;                      
             switch(selectedCar) {
                 case " ":
                     pricePerDay = " ";
@@ -25,10 +25,8 @@
             }        
 
             var totalCost = daysInTotal * pricePerDay;
-            //output
             
             document.getElementById("ratePerDay").innerHTML = "Your daily cost is: $" + pricePerDay.toFixed(2);
-
             document.getElementById("totalCostOut").innerHTML = "Your total cost is: $" + totalCost.toFixed(2);
             }
         </script>
